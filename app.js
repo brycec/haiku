@@ -7,7 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , mongoose = require('mongoose')
 
-db = mongoose.connect("mongodb://localhost/test");
+db = mongoose.connect("mongodb://bryce:asdfjkl@staff.mongohq.com:10015/dev");
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -91,5 +91,5 @@ app.put('/:object/:id', validateReq, initObjStore, function (req, res) {
 	});
 });
 
-app.listen(3000);
+app.listen(process.env.PORT);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
