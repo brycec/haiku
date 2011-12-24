@@ -2,10 +2,18 @@
   .fill
     .container
       a.brand(href='/') haikutes
+      form.pull-right
+        a.btn.primary(href='/') See Haikus &raquo;
 
 .container
-  .row
-    .span6 Hey there
-  .row
-    .span3 left side
-    .span3 right side
+  form
+    .row.clearfix
+      input(type='text').span4.offset1
+    .row.clearfix.center
+      input(type='text').span6
+    .row.clearfix
+      input(type='text').span4.offset1
+    .actions
+        a.btn(href='/') Reset
+        span &nbsp;
+        a.btn.primary(href='/') Submit
