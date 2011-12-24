@@ -5,7 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , mongoose = require('mongoose')
+  , mongoose = require('mongoose');
 
 db = mongoose.connect("mongodb://bryce:asdfjkl@staff.mongohq.com:10015/dev");
 var app = module.exports = express.createServer();
@@ -52,21 +52,21 @@ function validateReq(req, res, next) {
 }
 
 // Get single object
-app.get('/:object/:id', initObjStore, function (req, res) {
+app.get('/a/:object/:id', initObjStore, function (req, res) {
 	req.ObjModel.findById(req.params.id, function (err, doc) {
 		res.json(doc);
 	});
 });
 
 // Get object collection
-app.get('/:object', initObjStore, function (req, res) {
+app.get('/a/:object', initObjStore, function (req, res) {
 	req.ObjModel.find({}, function (err, docs) {
 		res.json(docs);
 	});
 });
 
 // Create new object
-app.post('/:object', validateReq, initObjStore, function (req, res) {
+app.post('/a/:object', validateReq, initObjStore, function (req, res) {
 	var newObj = new req.ObjModel();
 	for (var key in req.body) {
 		newObj.set(key, req.body[key]);
@@ -78,7 +78,7 @@ app.post('/:object', validateReq, initObjStore, function (req, res) {
 });
 
 // Update an object
-app.put('/:object/:id', validateReq, initObjStore, function (req, res) {
+app.put('/a/:object/:id', validateReq, initObjStore, function (req, res) {
 	req.ObjModel.findById(req.params.id, function (err, doc) {
 		for (var key in req.body) {
 			doc.set(key, req.body[key]);
