@@ -1,19 +1,23 @@
-.topbar
-  .fill
-    .container
-      a.brand(href='/') haikutes
-      form.pull-right
-        a.btn.primary(href='/') See Haikus &raquo;
-
-.container
-  form
-    .row.clearfix
-      input(type='text').span4.offset1
-    .row.clearfix.center
-      input(type='text').span6
-    .row.clearfix
-      input(type='text').span4.offset1
-    .actions
-        a.btn(href='/') Reset
-        span &nbsp;
-        a.btn.primary(href='/') Submit
+#create-view.container
+  .row
+    .span6
+      h1 Write a haiku
+      h3
+        small Three sets of five, seven and five syllables.
+    .span6
+      .well
+        form.inline-form
+          .row
+            fieldset.control-group.span3
+              input(type='text').line1.span3
+          .row
+            fieldset.control-group.span4
+              input(type='text').span4
+          .row
+            fieldset.control-group.span3
+              input(type='text').span3
+          fieldset.form-actions
+            .pull-right
+              a.reset.btn(href='javascript:void(0)') Reset
+              span &nbsp;
+              input(type='submit').btn.primary(href='/') Submit

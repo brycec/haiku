@@ -7,9 +7,22 @@ html(lang="en")
     script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js')
     script(type='text/javascript', src='http://documentcloud.github.com/underscore/underscore.js')
     script(type='text/javascript', src='http://documentcloud.github.com/backbone/backbone.js')
+    script(type='text/javascript', src='/js/hypher.js')
+    script(type='text/javascript', src='/js/hypher/en-us.js')
     script(type='text/javascript', src='/js/main.js')
     style
       body {
         padding-top: 60px;
       }
-  body!= body
+      .navbar form {
+        margin: 5px 0;
+      }
+  body
+    .navbar.navbar-fixed
+      .navbar-inner
+        .container
+           a.brand(href='/') haikutes
+           form.pull-right
+             a.btn.info(href='/') See Haikus &raquo;
+    .view
+      !=body
