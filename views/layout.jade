@@ -7,15 +7,15 @@ html(lang="en")
     script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js')
     script(type='text/javascript', src='http://documentcloud.github.com/underscore/underscore.js')
     script(type='text/javascript', src='http://documentcloud.github.com/backbone/backbone.js')
-    script(type='text/javascript', src='/js/hypher.js')
-    script(type='text/javascript', src='/js/hypher/en-us.js')
+    script(type='text/javascript', src='/js/lib/hypher.js')
+    script(type='text/javascript', src='/js/lib/hyph-patterns/en-us.js')
     script(type='text/javascript', src='/js/main.js')
     style
       body {
         padding-top: 60px;
       }
       .navbar form {
-        margin: 5px 0;
+        margin: 0;
       }
   body
     .navbar.navbar-fixed
@@ -23,6 +23,6 @@ html(lang="en")
         .container
            a.brand(href='/') haikutes
            form.pull-right
-             a.btn.info(href='/') See Haikus &raquo;
+             a.btn.info.nav-back(href='javascript:void(0)') See Haikus &raquo;
     .view
       !=body

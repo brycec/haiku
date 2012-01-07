@@ -12,12 +12,28 @@
               input(type='text').line1.span3
           .row
             fieldset.control-group.span4
-              input(type='text').span4
+              input(type='text').line2.span4
           .row
             fieldset.control-group.span3
-              input(type='text').span3
+              input(type='text').line3.span3
           fieldset.form-actions
             .pull-right
               a.reset.btn(href='javascript:void(0)') Reset
               span &nbsp;
               input(type='submit').btn.primary(href='/') Submit
+
+#haikus-view.container
+  .row
+    .span6
+      h1 Haikus
+      p
+        a.btn.primary(href="javascript:void(0)") New Haiku
+    .span6
+      ul#haikulist
+
+script#haiku-view(type="text/template")
+  ul
+    <% _.each(lines, function(line) { %>
+    li
+      <%=line %>
+    <% }); %>
